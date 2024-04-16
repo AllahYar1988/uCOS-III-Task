@@ -1,0 +1,32 @@
+D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\FLASH\BrowseInfo\APP\Serial\app_serial.pbi: \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\app_serial.c \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\app_serial.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-LIB\lib_def.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-CPU\cpu_def.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-CPU\ARM-Cortex-M4\IAR\cpu.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\intrinsics.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iccarm_builtin.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Full.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iar_intrinsics_common.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\cpu_cfg.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\app_cfg.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-Serial\Source\serial.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-LIB\lib_ascii.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-LIB\lib_str.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\lib_cfg.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-LIB\lib_mem.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-CPU\cpu_core.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-Serial\Source\serial_buf.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-Serial\Source\serial_type.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-Serial\Line\serial_line_dflt.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\BSP\serial_bsp_stm3240x.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\BSP\bsp.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-Serial\Driver\ST\serial_drv_stm32.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdarg.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdio.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ysizet.h \
+  D:\1403_Projects\TaskCodeV1.0\ -\ Copy\SourceCode\STM32\STM32F407\IAR\Project\..\..\..\..\..\Software\uC-Serial\Line\serial_line_tty.h

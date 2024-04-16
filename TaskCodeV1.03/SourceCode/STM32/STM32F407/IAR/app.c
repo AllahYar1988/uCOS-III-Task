@@ -10,7 +10,7 @@
 
 
 
-/**************************************************************/
+
 static  OS_TCB       AppTaskStartTCB;
 static  CPU_STK      AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE];
 
@@ -21,13 +21,16 @@ static  OS_TCB        SecondLEDControlTCB;
 static  CPU_STK      SecondLEDControlStk[APP_CFG_TASK_LEDC_STK_SIZE];
 
 
-/******************************************************/
+
 static  void  AppTaskStart (void  *p_arg);
+
+
+
 static  void  FirstLEDControl   (void  *p_arg);                                       
 static  void  SecondLEDControl   (void  *p_arg);                   
 
 
-/*************** Main Function ***********************/
+
 int main(void)
 {
     OS_ERR   err;
@@ -61,7 +64,6 @@ int main(void)
 }
 
 
-/*************** App Start Task ***********************/
 
 static  void  AppTaskStart (void *p_arg)
 {

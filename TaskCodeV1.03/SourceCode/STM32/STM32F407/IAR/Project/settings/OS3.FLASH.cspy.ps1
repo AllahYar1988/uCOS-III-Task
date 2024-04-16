@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "D:\1403_Projects\TaskCodeV1.03\SourceCode\STM32\STM32F407\IAR\Project\settings\OS3.FLASH.general.xcl" --backend -f "D:\1403_Projects\TaskCodeV1.03\SourceCode\STM32\STM32F407\IAR\Project\settings\OS3.FLASH.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "D:\1403_Projects\TaskCodeV1.03 - Copy\SourceCode\STM32\STM32F407\IAR\Project\settings\OS3.FLASH.general.xcl" --backend -f "D:\1403_Projects\TaskCodeV1.03 - Copy\SourceCode\STM32\STM32F407\IAR\Project\settings\OS3.FLASH.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "D:\1403_Projects\TaskCodeV1.03\SourceCode\STM32\STM32F407\IAR\Project\settings\OS3.FLASH.general.xcl" --debug_file=$debugfile --backend -f "D:\1403_Projects\TaskCodeV1.03\SourceCode\STM32\STM32F407\IAR\Project\settings\OS3.FLASH.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "D:\1403_Projects\TaskCodeV1.03 - Copy\SourceCode\STM32\STM32F407\IAR\Project\settings\OS3.FLASH.general.xcl" --debug_file=$debugfile --backend -f "D:\1403_Projects\TaskCodeV1.03 - Copy\SourceCode\STM32\STM32F407\IAR\Project\settings\OS3.FLASH.driver.xcl" 
 }

@@ -8,7 +8,9 @@
 #include  <app_cfg.h>
 #include  <bsp.h>
 
-
+/* define to see the test result*/
+//#define mOS_SEM_EN
+#define mOS_MUTEX_EN
 
 
 static  OS_TCB       AppTaskStartTCB;
@@ -29,8 +31,14 @@ static  void  AppTaskStart (void  *p_arg);
 static  void  FirstLEDControl   (void  *p_arg);                                       
 static  void  SecondLEDControl   (void  *p_arg);                   
 
+#ifdef mOS_SEM_EN
+static  OS_SEM       AppTaskFLEDSem;
+#endif
+#ifdef mOS_MUTEX_EN
+static  OS_MUTEX      AppTaskFLEDMutex;
+#endif
 
-
+/* ooooooooooooooooooooooo     MAin       oooooooooooooooooooooooo*/
 int main(void)
 {
     OS_ERR   err;
@@ -64,7 +72,7 @@ int main(void)
 }
 
 
-
+/* ooooooooooooooooooooooo App Task Start oooooooooooooooooooooooo*/
 static  void  AppTaskStart (void *p_arg)
 {
     OS_ERR      err;
@@ -74,7 +82,17 @@ static  void  AppTaskStart (void *p_arg)
     BSP_Init();                                                
     CPU_Init();                                                
 
-
+#ifdef mOS_SEM_EN
+    OSSemCreate(&AppTaskFLEDSem,
+                "Sem Test",
+                 0u,
+                &err);
+#endif
+#ifdef mOS_MUTEX_EN
+         OSMutexCreate(&AppTaskFLEDMutex,
+                  "Mutex Test",
+                  &err);
+#endif
                                                                
     OSTaskCreate(&FirstLEDControlTCB,
                  "First LED Control",
@@ -118,7 +136,7 @@ static  void  AppTaskStart (void *p_arg)
 
 
 
-/* First LED Control Task*/
+/*ooooooooooooooooooooo First LED Control Task oooooooooooooooooooo*/
 
 void  FirstLEDControl (void  *p_arg)
 {
@@ -128,15 +146,52 @@ void  FirstLEDControl (void  *p_arg)
     while (1) 
        {
       
-         HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
-         OSTimeDlyHMSM(0u, 0u, 0u, 200u,
+       
+/*========================== Semaphore Test ==========================*/         
+        #ifdef mOS_SEM_EN
+         /*-----------------LED Control -------------*/
+           HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
+         OSTimeDlyHMSM(0u, 0u, 0u, 500u,
                       OS_OPT_TIME_HMSM_STRICT,
-                      &err); 
-        }
+                      &err);
+         
+         /*-----------------SEM Post -------------*/
+               OSSemPost(&AppTaskFLEDSem,
+                          OS_OPT_POST_1,
+                          &err);
+        #endif
+        
+ /*========================== Mutex Test ==========================*/
+    
+       #ifdef mOS_MUTEX_EN
+         /*-----------------Mutex Pend -------------*/
+        OSMutexPend(&AppTaskFLEDMutex,
+                     0,
+                     OS_OPT_PEND_BLOCKING,
+                     0,
+                    &err);
+        
+         /*-----------------LED Control -------------*/
+       
+        OSTimeDlyHMSM(0u, 0u, 0u, 50u,
+                      OS_OPT_TIME_HMSM_STRICT,
+                      &err);
+         HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin,1);
+
+        OSTimeDlyHMSM( 0u, 0u, 0u, 100u,
+                       OS_OPT_TIME_HMSM_STRICT,
+                      &err);
+        
+        /*-----------------Mutex Post -------------*/
+        OSMutexPost(&AppTaskFLEDMutex,
+                     OS_OPT_POST_NONE,
+                    &err);
+#endif
+       }
 }
 
 
-/* Second LED Control Task*/
+/*ooooooooooooooooooooo Second LED Control Task ooooooooooooooooooo*/
 
 void  SecondLEDControl (void  *p_arg)
 {
@@ -144,13 +199,52 @@ void  SecondLEDControl (void  *p_arg)
 
 
     while (1) {
-    
-        HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
+/*========================== Semaphore Test ==========================*/
+      #ifdef mOS_SEM_EN
+         /*-----------------SEM Pend -------------*/
+        OSSemPend(&AppTaskFLEDSem,
+                   0,
+                   OS_OPT_PEND_BLOCKING,
+                   0,
+                  &err);
+        
+        /*-----------------LED Control -------------*/
+                HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
 
+       #endif
+                
+                
+ /*========================== Mutex Test ==========================*/
 
-        OSTimeDlyHMSM(0u, 0u, 0u, 500u,
+        #ifdef mOS_MUTEX_EN
+                
+               
+        /*-----------------Mutex Pend -------------*/
+        OSMutexPend(&AppTaskFLEDMutex,
+                     0,
+                     OS_OPT_PEND_BLOCKING,
+                     0,
+                    &err);
+          /*-----------------LED Control -------------*/
+ 
+          OSTimeDlyHMSM(0u, 0u, 0u, 50u,
                       OS_OPT_TIME_HMSM_STRICT,
                       &err);
+                 HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin,0);
+
+                 
+        /*-----------------Mutex Post -------------*/
+         OSMutexPost(&AppTaskFLEDMutex,
+                     OS_OPT_POST_NONE,
+                    &err);
+
+        #endif
+
+       /* OSTimeDlyHMSM(0u, 0u, 0u, 50u,
+                      OS_OPT_TIME_HMSM_STRICT,
+                      &err);*/
+
+
 
  
     }
